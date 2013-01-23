@@ -13,12 +13,13 @@ Introduction:
   * Munin [http://munin-monitoring.org/](http://munin-monitoring.org/) - monitoring software
   * Arris 900s - cable modem using DOCSIS 3.0 technology
   * munin-arris-plugin - munin-plugin to monitor Internet connection using the Arris modem
+  * my munin-node runs on Raspberry Pi computer and has a very low requirements.
 
 Installation:
 =============
 You should have up and running installation of Munin.
 Two options:
-  - copy scripts to /etc/munin/plugins/
+  - copy scripts (*.sh) to /etc/munin/plugins/
   - ln -S the scripts to the /etc/munin/plugins right from the git fetched repository
 
 Restart munin-node (sudo /etc/init.d/munin-node restart).
@@ -59,3 +60,9 @@ downsnr1.value 37.60
 downsnr2.value 36.40
 downsnr3.value 36.60
 ```
+
+How the script works:
+=====================
+Connect to modem statistics page using wget.
+Grep line of interest.
+Convert to required format using awk / sed combo.
