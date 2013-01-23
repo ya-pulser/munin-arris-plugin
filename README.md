@@ -22,7 +22,15 @@ Two options:
   - ln -S the scripts to the /etc/munin/plugins right from the git fetched repository
 
 Restart munin-node (sudo /etc/init.d/munin-node restart).
+
 Wait 10-20 minutes, observe results through /var/cache/munin/www folder or start Web Server there and go to html interface.
+
+To start simplest web server:
+```
+cd /var/cache/munin/www
+python -m SimpleHTTPServer
+``` 
+and go to [http://localhost:8000/](http://localhost:8000/).
 
 Desctiption:
 ============
