@@ -63,6 +63,6 @@ downsnr3.value 36.60
 
 How the script works:
 =====================
-Connect to modem statistics page using wget.
-Grep line of interest.
-Convert to required format using awk / sed combo.
+  - Connect to modem statistics page using wget.
+  - Grep line of interest.
+  - Convert to required format using awk / sed combo.
