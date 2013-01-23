@@ -17,4 +17,11 @@ fi
 
 MODEM_URL=192.168.100.1/phy.htm
 
-wget -q -O - $MODEM_URL | grep 'TR><TD>Downstream' | awk 'BEGIN{RS="R"} {print $0;}' | grep 'MHz' | sed 's/<\/TD><TD>/ /g;s/><TD>//g; s/<\/TD>//g; s/<T//g; s/Downstream /downvolt/' | awk ' { print $1 ".value",$4; }' | grep downvolt
+wget -q -O - $MODEM_URL | \
+  grep 'TR><TD>Downstream' | \
+  awk 'BEGIN{RS="R"} {print $0;}' | \
+  grep 'MHz' | \
+  sed 's/<\/TD><TD>/ /g;s/><TD>//g; s/<\/TD>//g; s/<T//g; s/Downstream /downvolt/' | \
+  awk ' { print $1 ".value",$4; }' | \
+  grep downvolt
+
